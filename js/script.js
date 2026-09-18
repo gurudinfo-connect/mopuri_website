@@ -3,48 +3,13 @@
    ========================================================================== */
 
 /* ---------------- Form → Email delivery ----------------
-   Every form on the site (consultation modal, homepage/service lead form,
-   Get Started enquiry, careers application) submits through this one
-   helper so every entry is emailed straight to MBS_FORM_TO_EMAIL.
-
-   This is a static site with no server, so an in-browser form cannot send
-   email by itself — it needs a small third-party relay to actually
-   deliver the message. This uses Web3Forms (https://web3forms.com), a
-   free service built exactly for this: the browser POSTs the form data
-   to their API and they forward it to the inbox tied to your access key.
-
-   TO ACTIVATE (one-time, ~2 minutes, no coding):
-     1. Go to https://web3forms.com and enter info@mopuri.in — they email
-        that inbox a free access key immediately (no account/login needed).
-     2. Copy the access key from that email.
-     3. Paste it below, replacing 'REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY'.
-   Until that key is added, forms will still validate and show their
-   normal success message, but the email itself won't be delivered. */
-window.MBS_FORM_TO_EMAIL = 'info@mopuri.in';
-window.MBS_FORM_ACCESS_KEY = 'REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY';
-
-window.MBS_sendFormEmail = function (formData, subject) {
-  try {
-    formData.append('access_key', window.MBS_FORM_ACCESS_KEY);
-    formData.append('subject', subject || ('New website enquiry — ' + window.MBS_FORM_TO_EMAIL));
-    formData.append('from_name', 'Mopuri Business Solutions Website');
-    if (formData.get('email') && !formData.get('replyto')) {
-      formData.append('replyto', formData.get('email'));
-    }
-    return fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData
-    })
-      .then(function (res) { return res.json(); })
-      .catch(function (err) {
-        console.error('Form email delivery failed:', err);
-        return { success: false, error: err };
-      });
-  } catch (err) {
-    console.error('Form email delivery failed:', err);
-    return Promise.resolve({ success: false, error: err });
-  }
-};
+   window.MBS_sendFormEmail(formData, subject) is called by the
+   consultation modal, homepage/service lead form, Get Started enquiry,
+   careers application and newsletter signup below. The function itself
+   now lives in js/form-mailer.js (loaded right before this file on every
+   page) — it POSTs straight to php/send-mail.php on this same Hostinger
+   hosting, which emails the submission to mopurisolutions@gmail.com. See that file
+   for setup notes. */
 
 /* ---------------- Shared icon library ----------------
    Generic icons (used for benefit/document cards on service.html via
@@ -855,7 +820,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gst: "We handle GST registration, filings, e-way billing and modifications end-to-end. Want a callback to get started?",
     trademark: "We can help with trademark registration, objections, hearings, oppositions and copyright/patent filing. Would you like our team to reach out?",
     company: "We register Proprietorships, OPCs, LLPs, Private/Public Limited Companies, Section 8 and more. Tell me which structure you're considering, or call us for a callback.",
-    expert: "You can reach our team directly:\n📞 Call/WhatsApp: +91 63097 30419\n📧 Email: info@mopuri.in\n⏱️ Response time: within 24 hours (often much sooner during business hours).\nOr share your details in chat and we'll call you back.",
+    expert: "You can reach our team directly:\n📞 Call/WhatsApp: +91 63097 30419\n📧 Email: mopurisolutions@gmail.com\n⏱️ Response time: within 24 hours (often much sooner during business hours).\nOr share your details in chat and we'll call you back.",
 
     // Company Information
     aboutServices: "We offer end-to-end business services — company & startup registrations, GST, Income Tax, Trademark & IPR, ROC compliance, accounting, FSSAI, EPF/ESI, Import-Export Code and website/digital services. Tell me what you're looking for and I'll point you in the right direction!",
@@ -906,7 +871,7 @@ document.addEventListener('DOMContentLoaded', () => {
     iecCode: "An Import Export Code (IEC) is issued by DGFT and we typically get it processed in 1–2 working days once your documents are submitted. Want us to start your application?",
 
     // Contact & Support
-    contactTeam: "You can reach our team at +91 63097 30419 or info@mopuri.in — or tap \u201cTalk to Expert\u201d here and we'll call you back.",
+    contactTeam: "You can reach our team at +91 63097 30419 or mopurisolutions@gmail.com — or tap \u201cTalk to Expert\u201d here and we'll call you back.",
     postSupport: "Yes, we stay with you after registration for compliance, renewals, notices and any follow-up questions — many of our packages even include a year of post-service support.",
     bookConsultation: "You can book a free consultation by tapping the \u201cRequest Free Consultation\u201d button on our site, or just share your number here and our team will call you back.",
 
@@ -1409,7 +1374,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sendBotReply(LEAD_STEPS[leadFlow.step].prompt);
     } else {
       leadFlow.active = false;
-      sendBotReply(`Thanks, ${leadFlow.data.name || 'there'}! We've got your details — one of our specialists will call you at ${leadFlow.data.phone || 'the number you shared'} shortly. You can also reach us anytime at +91 63097 30419 or info@mopuri.in.`);
+      sendBotReply(`Thanks, ${leadFlow.data.name || 'there'}! We've got your details — one of our specialists will call you at ${leadFlow.data.phone || 'the number you shared'} shortly. You can also reach us anytime at +91 63097 30419 or mopurisolutions@gmail.com.`);
     }
   }
 
