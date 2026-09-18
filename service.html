@@ -3,29 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pricing — Mopuri Business Solutions</title>
-<meta name="description" content="Transparent, upfront pricing for every Mopuri Business Solutions service — software, startup registration, IP, tax, GST, ROC compliance and consultations.">
+<title id="pageTitle">Service — Mopuri Business Solutions</title>
+<meta name="description" id="pageDescription" content="Professional business service by Mopuri Business Solutions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="../assets/logo-mark.png">
-<link rel="apple-touch-icon" href="../assets/logo-mark.png">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="apple-touch-icon" href="assets/logo-mark.png">
 <meta name="theme-color" content="#ff7a00">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/premium-enhancements.css">
-<link rel="stylesheet" href="../css/service.css">
-<link rel="stylesheet" href="../css/pricing.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/service.css">
+<link rel="stylesheet" href="css/premium-enhancements.css">
 </head>
 <body>
 
-<!-- ============ CUSTOM CURSOR / SEAL RIPPLE LAYER ============ -->
 <div class="grain-overlay" aria-hidden="true"></div>
 
-<!-- ============ NAVBAR ============ -->
 <header class="navbar" id="navbar">
   <div class="navbar-inner">
     <a href="index.html" class="brand">
-      <img src="../assets/logo.png" alt="Mopuri Business Solutions" class="brand-logo">
+      <img src="assets/logo.png" alt="Mopuri Business Solutions" class="brand-logo">
     </a>
 
     <nav class="main-nav" id="mainNav">
@@ -143,45 +140,222 @@
     <div class="search-results" id="searchResults"></div>
   </div>
 </header>
+
 <!-- ============ MOBILE NAV ============ -->
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-inner" id="mobileNavInner"></div>
 </div>
 <div class="nav-scrim" id="navScrim"></div>
-<main>
 
-<!-- ============ PRICING HERO ============ -->
-<section class="gs-hero">
-  <div class="container gs-hero-content">
-    <p class="eyebrow reveal-up" data-delay="0">Pricing</p>
-    <h1 class="gs-hero-title reveal-up" data-delay="1">Simple, Transparent Pricing</h1>
-    <p class="gs-hero-sub reveal-up" data-delay="2">Upfront pricing for every service we offer — software, startup registration, IP, tax, GST, ROC compliance and expert consultations. No hidden charges.</p>
+<main id="serviceMain">
+
+<!-- ============ HERO ============ -->
+<section class="svc-hero svc-hero-noimg">
+  <div class="container svc-hero-content">
+    <h1 class="svc-hero-title reveal-up" id="svcName">Service Name</h1>
+
+    <div class="svc-hero-price-card reveal-up" id="svcHeroPriceBanner" data-delay="1">
+      <span class="svc-hero-price-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </span>
+      <div class="svc-hero-price-info">
+        <span class="svc-hero-price-label">Starting price for <strong id="svcHeroPriceName">this service</strong></span>
+        <span class="svc-hero-price-value" id="svcHeroPriceAmount">₹0</span>
+      </div>
+      <a href="#svc-pricing" class="btn btn-primary svc-hero-price-btn">View Pricing</a>
+    </div>
   </div>
 </section>
 
-<!-- ============ CATEGORY QUICK NAV ============ -->
-<section class="section pricing-quicknav-section">
+<!-- ============ LEAD GENERATION ============ -->
+<section class="leadgen svc-leadgen section" id="svc-leadgen">
   <div class="container">
-    <div class="pricing-quicknav reveal-up" id="pricingQuickNav"></div>
+    <div class="svc-leadgen-card reveal-up">
+      <div class="leadgen-grid">
+        <div class="leadgen-copy">
+          <p class="eyebrow reveal-up">Get Started Today</p>
+          <h2 class="section-title reveal-up" id="svcLeadHeading">Get Free Expert Consultation</h2>
+          <p class="lede reveal-up" data-delay="1" id="svcLeadDesc">Tell us your business requirements and our experts will contact you with the best solution and pricing.</p>
+
+          <ul class="leadgen-benefits" id="svcLeadBenefits"></ul>
+        </div>
+
+        <div class="leadgen-form-wrap reveal-up" data-delay="2">
+          <form class="contact-form leadgen-form" id="leadForm" novalidate>
+        <div class="form-field">
+          <label for="leadName">Full Name <span class="req">*</span></label>
+          <input type="text" id="leadName" name="name" placeholder="Enter your full name" required>
+          <span class="field-error">Please enter a valid name using letters only.</span>
+        </div>
+
+        <div class="form-field">
+          <label for="leadEmail">Email Address <span class="req">*</span></label>
+          <input type="email" id="leadEmail" name="email" placeholder="you@example.com" required>
+          <span class="field-error">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-field form-field-phone-inline">
+          <label for="leadPhone">Mobile Number <span class="req">*</span></label>
+          <div class="phone-row">
+            <span class="phone-prefix-static">+91</span>
+            <input type="tel" id="leadPhone" name="phone" placeholder="10-digit mobile number" inputmode="numeric" maxlength="10" required>
+          </div>
+          <span class="field-error">Please enter a valid 10-digit mobile number.</span>
+        </div>
+
+        <div class="form-field form-field-select">
+          <label for="leadService">Service Required <span class="req">*</span></label>
+          <select id="leadService" name="service" required>
+            <!-- Options are populated dynamically by service.js so this
+                 dropdown only ever lists services from the current
+                 service's own navigation menu/category. -->
+            <option value="" disabled selected>Select a service</option>
+          </select>
+          <span class="field-error">Please select a service</span>
+        </div>
+
+        <div class="form-field">
+          <label for="leadMessage">Message <span class="opt">(Optional)</span></label>
+          <textarea id="leadMessage" name="message" rows="3" placeholder="Tell us briefly about your requirement…"></textarea>
+        </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-submit" id="leadSubmit">
+            <span class="btn-submit-label">Submit Enquiry</span>
+            <span class="btn-submit-spinner"></span>
+          </button>
+          <p class="form-success" id="leadFormSuccess">Thanks! Our team will contact you within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============ PRICING CATEGORIES (rendered by pricing.js from pricing-data.js) ============ -->
-<div id="pricingCategories"></div>
+<!-- ============ ABOUT ============ -->
+<section class="section svc-section" id="svc-about">
+  <div class="container">
+    <div class="section-head" style="text-align:left;margin:0 0 48px;max-width:100%;">
+      <p class="eyebrow reveal-up">About the Service</p>
+      <h2 class="section-title reveal-up" id="svcAboutTitle">Understanding this service</h2>
+    </div>
+    <div class="svc-about-grid" id="svcAboutGrid"></div>
+  </div>
+</section>
 
-<!-- ============ PRICING FAQ / NOTE ============ -->
-<section class="section svc-section svc-section-alt">
+<!-- ============ FEATURES & BENEFITS ============ -->
+<section class="section svc-section svc-section-alt" id="svc-benefits">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow reveal-up">Good To Know</p>
-      <h2 class="section-title reveal-up">A Few Notes On Pricing</h2>
+      <p class="eyebrow reveal-up">Features &amp; Benefits</p>
+      <h2 class="section-title reveal-up">Why this service matters for you</h2>
     </div>
-    <ul class="leadgen-benefits pricing-notes reveal-up" data-delay="1">
-      <li><span class="leadgen-check"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 12l2.5 2.5L16 9"/></svg></span>Software service prices are exclusive of GST. Government/legal service prices exclude applicable GST &amp; government fees.</li>
-      <li><span class="leadgen-check"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 12l2.5 2.5L16 9"/></svg></span>Prices marked "Starting from" can vary based on the complexity and scope of your specific requirement.</li>
-      <li><span class="leadgen-check"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 12l2.5 2.5L16 9"/></svg></span>Choosing a plan below takes you straight to our enquiry form with the service and plan pre-filled — no repeated typing.</li>
-      <li><span class="leadgen-check"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 12l2.5 2.5L16 9"/></svg></span>Not sure which plan fits? <a href="get-started.html">Get in touch</a> and our team will help you choose.</li>
-    </ul>
+    <div class="svc-benefits-grid" id="svcBenefitsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ DOCUMENTS REQUIRED ============ -->
+<section class="section svc-section" id="svc-documents">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Documents Required</p>
+      <h2 class="section-title reveal-up">Keep these documents ready</h2>
+    </div>
+    <div class="svc-docs-grid" id="svcDocsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section svc-section" id="svc-process">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Our Process</p>
+      <h2 class="section-title reveal-up" id="svcProcessTitle">A simple, guided journey</h2>
+    </div>
+    <div class="svc-process-timeline" id="svcProcessGrid"></div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="section svc-section svc-section-alt" id="svc-timeline">
+  <div class="container svc-timeline-wrap">
+    <div class="svc-timeline-copy">
+      <p class="eyebrow reveal-up">Timeline</p>
+      <h2 class="section-title reveal-up" id="svcTimelineTitle">How long will it take?</h2>
+      <p class="body-text reveal-up" data-delay="1" id="svcTimelineText"></p>
+      <ul class="svc-timeline-factors" id="svcTimelineFactors"></ul>
+    </div>
+    <div class="svc-timeline-card reveal-up" data-delay="1">
+      <span class="svc-timeline-icon">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      </span>
+      <h3>Estimated Completion</h3>
+      <p id="svcTimelineBig"></p>
+      <span class="svc-timeline-note" id="svcTimelineNote">Government processing time may vary based on department workload.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section svc-section" id="svc-pricing">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Pricing</p>
+      <h2 class="section-title reveal-up" id="svcPricingTitle">Transparent, all-inclusive packages</h2>
+      <p class="section-desc reveal-up" data-delay="1">No hidden charges. Choose the package that fits your business — upgrade anytime.</p>
+    </div>
+    <div class="svc-pricing-grid" id="svcPricingGrid"></div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section svc-section svc-section-alt" id="svc-why">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title reveal-up">Why Choose Mopuri Business Solutions</h2>
+    </div>
+    <div class="svc-why-grid">
+      <div class="svc-why-card reveal-up" data-delay="0"><span class="svc-why-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Experienced Professionals</h3><p>A qualified team with hands-on experience across legal, tax and compliance domains.</p></div>
+      <div class="svc-why-card reveal-up" data-delay="1"><span class="svc-why-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg></span><h3>Trusted Business Consultants</h3><p>500+ businesses across South India rely on us for accurate, dependable guidance.</p></div>
+      <div class="svc-why-card reveal-up" data-delay="2"><span class="svc-why-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><h3>Affordable Pricing</h3><p>Transparent, competitive pricing with absolutely no hidden charges.</p></div>
+      <div class="svc-why-card reveal-up" data-delay="3"><span class="svc-why-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h7l-1 8 11-14h-8l1-6z"/></svg></span><h3>Quick Turnaround</h3><p>Streamlined internal processes that keep your filing moving without delay.</p></div>
+      <div class="svc-why-card reveal-up" data-delay="4"><span class="svc-why-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h3>Complete Documentation Support</h3><p>We prepare, verify and organise every document so nothing is ever missing.</p></div>
+      <div class="svc-why-card reveal-up" data-delay="5"><span class="svc-why-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-6h4v6"/></svg></span><h3>End-to-End Assistance</h3><p>From first consultation to final certificate — we manage the entire journey.</p></div>
+      <div class="svc-why-card reveal-up" data-delay="6"><span class="svc-why-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span><h3>Dedicated Customer Support</h3><p>One relationship manager stays with you before, during and after your service.</p></div>
+      <div class="svc-why-card reveal-up" data-delay="7"><span class="svc-why-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span><h3>Secure Process</h3><p>Your documents and data are handled with strict confidentiality at every step.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section svc-section svc-section-alt" id="svc-faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Frequently Asked Questions</p>
+      <h2 class="section-title reveal-up" id="svcFaqTitle">Have questions? We have answers</h2>
+    </div>
+    <div class="svc-faq-list" id="svcFaqList"></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section svc-section" id="svc-testimonials">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Customer Reviews</p>
+      <h2 class="section-title reveal-up">What our clients say</h2>
+    </div>
+    <div class="svc-testimonial-grid" id="svcTestimonialGrid"></div>
+  </div>
+</section>
+
+<!-- ============ RELATED SERVICES ============ -->
+<section class="section svc-section svc-section-alt" id="svc-related">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Related Services</p>
+      <h2 class="section-title reveal-up">You may also need</h2>
+    </div>
+    <div class="svc-related-grid" id="svcRelatedGrid"></div>
   </div>
 </section>
 
@@ -192,7 +366,7 @@
   <div class="container footer-top">
     <div class="footer-brand">
       <a href="index.html" class="footer-logo-badge" aria-label="Mopuri Business Solutions — Home">
-        <img src="../assets/logo.png" alt="Mopuri Business Solutions" class="footer-logo">
+        <img src="assets/logo.png" alt="Mopuri Business Solutions" class="footer-logo">
       </a>
       <p><strong>Powered by MINDCREADZ PRIVATE LIMITED</strong></p>
       <p class="footer-address">Mopuri Business Solutions, 1st Floor, 873, 28th Main Rd, Corporation Colony, Jayanagara 9th Block, Jayanagar, Bengaluru, Karnataka 560069</p>
@@ -308,20 +482,6 @@
   <span class="whatsapp-ping" aria-hidden="true"></span>
 </a>
 
-<!-- ============ CHATBOT WELCOME POPUP ============ -->
-<div class="chatbot-welcome" id="chatbotWelcome" role="dialog" aria-label="Mopuri Assistant welcome message">
-  <button class="chatbot-welcome-close" id="chatbotWelcomeClose" aria-label="Close welcome message">&times;</button>
-  <div class="chatbot-welcome-head">
-    <img src="../assets/logo-mark.png" alt="" class="chatbot-welcome-avatar" aria-hidden="true">
-    <strong>Mopuri AI Assistant</strong>
-  </div>
-  <div class="chatbot-welcome-body">
-    <p class="chatbot-welcome-greet">👋 Hi there! I'm Mopuri AI Assistant.</p>
-    <p class="chatbot-welcome-cta">Ask me anything—I'm here to help!</p>
-  </div>
-  <button class="chatbot-welcome-start" id="chatbotWelcomeStart">Start Chat</button>
-</div>
-
 <!-- ============ AI CHATBOT ============ -->
 <div class="chatbot" id="chatbot">
   <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chat assistant">
@@ -332,7 +492,7 @@
 
   <div class="chatbot-panel" id="chatbotPanel" role="dialog" aria-label="Mopuri Business Solutions chat assistant">
     <div class="chatbot-header">
-      <img src="../assets/logo-mark.png" alt="" class="chatbot-header-mark" aria-hidden="true">
+      <img src="assets/logo-mark.png" alt="" class="chatbot-header-mark" aria-hidden="true">
       <div class="chatbot-header-text">
         <strong>Mopuri Assistant</strong>
         <span><i class="chatbot-dot"></i> Online — typically replies instantly</span>
@@ -342,10 +502,11 @@
 
     <div class="chatbot-body" id="chatbotBody">
       <div class="chatbot-msg bot">
-        <img src="../assets/logo-mark.png" alt="" class="chatbot-msg-avatar" aria-hidden="true">
+        <img src="assets/logo-mark.png" alt="" class="chatbot-msg-avatar" aria-hidden="true">
         <div class="chatbot-bubble">Hi there 👋 I'm the Mopuri Assistant. What can I help you with today?</div>
       </div>
       <div class="chatbot-quick-replies" id="chatbotQuickReplies"></div>
+    </div>
 
     <form class="chatbot-input-row" id="chatbotForm">
       <input type="text" id="chatbotInput" placeholder="Type your message…" autocomplete="off">
@@ -356,22 +517,80 @@
   </div>
 </div>
 
-<script src="../js/services-data.js"></script>
-<script src="../js/form-mailer.js"></script>
-<script src="../js/script.js"></script>
-<script src="../js/account.js"></script>
-<script src="../js/pricing-data.js"></script>
-<script src="../js/pricing.js"></script>
-<script>
-  // Safety net: if script.js fails to load (or hasn't run its reveal
-  // animation yet), make sure .reveal-up content still becomes visible
-  // instead of staying hidden at opacity:0 forever.
-  (function () {
-    function revealAll() {
-      document.querySelectorAll('.reveal-up:not(.in-view)').forEach(function (el) {
-        el.classList.add('in-view');
-      });
-    }
-    window.addEventListener('load', function () { setTimeout(revealAll, 1200); });
-    document.addEventListener('DOMContentLoaded', function () { setTimeout(revealAll, 2500); });
-  })();
+<!-- ============ CONSULTATION MODAL ============ -->
+<div class="consult-overlay" id="consultOverlay" aria-hidden="true">
+  <div class="consult-modal" role="dialog" aria-modal="true" aria-labelledby="consultModalTitle">
+    <button type="button" class="consult-close" id="consultClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="consult-modal-body" id="consultModalBody">
+      <p class="eyebrow">Free Consultation</p>
+      <h3 id="consultModalTitle">Tell us what you need</h3>
+      <p class="consult-modal-sub">Share your details and our experts will get back to you shortly.</p>
+
+      <form class="consult-form" id="consultForm" novalidate>
+        <div class="form-field">
+          <input type="text" id="consultName" name="name" placeholder=" " required>
+          <label for="consultName">Full Name</label>
+          <span class="field-error">Please enter a valid name using letters only.</span>
+        </div>
+        <div class="form-field">
+          <input type="tel" id="consultPhone" name="phone" placeholder=" " inputmode="numeric" maxlength="10" required>
+          <label for="consultPhone">Phone Number</label>
+          <span class="field-error">Please enter a valid 10-digit mobile number.</span>
+        </div>
+        <div class="form-field">
+          <input type="email" id="consultEmail" name="email" placeholder=" " required>
+          <label for="consultEmail">Email Address</label>
+          <span class="field-error">Please enter a valid email address.</span>
+        </div>
+        <div class="form-field form-field-select">
+          <select id="consultService" name="service" required>
+            <!-- Options are populated dynamically by service.js so this
+                 dropdown only ever lists services from the current
+                 service's own navigation menu/category. -->
+            <option value="" disabled selected>Select a service</option>
+          </select>
+          <label class="form-field-select-label" for="consultService">Service Required</label>
+          <span class="field-error">Please select a service</span>
+        </div>
+        <div class="form-row-2">
+          <div class="form-field">
+            <input type="text" id="consultCompany" name="company" placeholder=" ">
+            <label for="consultCompany">Company Name (optional)</label>
+          </div>
+          <div class="form-field">
+            <input type="text" id="consultCity" name="city" placeholder=" ">
+            <label for="consultCity">City</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <textarea id="consultMessage" name="message" rows="3" placeholder=" "></textarea>
+          <label for="consultMessage">Message / Requirements (optional)</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-submit" id="consultSubmit">
+          <span class="btn-submit-label">Request Free Consultation</span>
+          <span class="btn-submit-spinner"></span>
+        </button>
+      </form>
+    </div>
+
+    <div class="consult-success" id="consultSuccess" hidden>
+      <span class="consult-success-icon">
+        <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+      </span>
+      <h3>Thank you!</h3>
+      <p>Your request has been received. Our team will contact you within 24 hours.</p>
+      <button type="button" class="btn btn-outline" id="consultSuccessClose">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/form-mailer.js"></script>
+<script src="js/script.js"></script>
+<script src="js/services-data.js"></script>
+<script src="js/service.js"></script>
+</body>
+</html>
