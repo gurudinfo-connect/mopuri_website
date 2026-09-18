@@ -1,0 +1,6 @@
+<svg viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The One Stop">
+<circle cx="20" cy="24" r="15" fill="none" stroke="#2C3E50" stroke-width="2.5"/>
+<circle cx="20" cy="24" r="8.5" fill="none" stroke="#1FA6A0" stroke-width="2.5"/>
+<path d="M20 24 L28 33" stroke="#1FA6A0" stroke-width="3" stroke-linecap="round"/>
+<text x="46" y="31" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#2C3E50">The One Stop</text>
+</svg>

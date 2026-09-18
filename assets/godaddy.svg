@@ -1,0 +1,6 @@
+<svg viewBox="0 0 210 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GoDaddy">
+<g fill="#1BDBDB" transform="translate(0,4) scale(1.4)">
+<path d="M20.702 2.29c-2.494-1.554-5.778-1.187-8.706.654C9.076 1.104 5.79.736 3.3 2.29c-3.941 2.463-4.42 8.806-1.07 14.167 2.47 3.954 6.333 6.269 9.77 6.226 3.439.043 7.301-2.273 9.771-6.226 3.347-5.361 2.87-11.704-1.069-14.167zm-3.523 12.13a3.858 3.858 0 1 1 0-7.716 3.858 3.858 0 0 1 0 7.716z"/>
+</g>
+<text x="46" y="31" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#111111">GoDaddy</text>
+</svg>

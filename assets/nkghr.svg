@@ -1,0 +1,8 @@
+<svg viewBox="0 0 170 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NKG HR">
+<g fill="none" stroke="#0F6FBE" stroke-width="3" stroke-linecap="round">
+<path d="M4 30c4-10 10-10 14 0s10 10 14 0" opacity="0.4"/>
+<path d="M4 24c4-10 10-10 14 0s10 10 14 0" opacity="0.7"/>
+<path d="M4 18c4-10 10-10 14 0s10 10 14 0"/>
+</g>
+<text x="42" y="31" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" fill="#0F2D52">NKG HR</text>
+</svg>

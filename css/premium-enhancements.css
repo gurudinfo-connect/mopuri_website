@@ -1,0 +1,406 @@
+/* ==========================================================================
+   PREMIUM UI/UX ENHANCEMENT LAYER — Mopuri Business Solutions
+   Loaded after style.css / service.css / careers.css.
+   Purpose: unify card hovers, add subtle glow + micro-interactions,
+   harmonise corner radii, polish dropdowns & chatbot, add scroll-reveal.
+   Layout, spacing, typography, responsiveness and page background colors
+   are untouched — this file only adds interaction polish on top.
+   ========================================================================== */
+
+:root{
+  --pui-primary:#FF9838;
+  --pui-hover:#FF8A20;
+  --pui-bg-light:#FFF5EC;
+  --pui-border:#FFD3A5;
+  --pui-glow:rgba(255,152,56,0.28);
+  --pui-glow-soft:rgba(255,152,56,0.16);
+  --pui-shadow-ambient:0 10px 24px rgba(17,17,17,0.06);
+}
+
+/* --------------------------------------------------------------------------
+   1 & 2 & 6 — UNIVERSAL CARD HOVER + PREMIUM GLOW + LAYERED SHADOWS
+   -------------------------------------------------------------------------- */
+.about-card,
+.service-card,
+.why-choose-card,
+.stat-card,
+.testimonial-card,
+.svc-hero-price-card,
+.svc-leadgen-card,
+.svc-timeline-card,
+.svc-why-card,
+.svc-faq-item,
+.svc-testimonial-card,
+.svc-related-card,
+.svc-about-card,
+.svc-benefit-card,
+.job-card,
+.careers-hr-card{
+  transition:transform .3s ease-in-out, box-shadow .3s ease-in-out, border-color .3s ease-in-out !important;
+}
+
+.about-card:hover,
+.service-card:hover,
+.service-card:focus-within,
+.why-choose-card:hover,
+.stat-card:hover,
+.testimonial-card:hover,
+.svc-hero-price-card:hover,
+.svc-leadgen-card:hover,
+.svc-timeline-card:hover,
+.svc-why-card:hover,
+.svc-faq-item:hover,
+.svc-testimonial-card:hover,
+.svc-related-card:hover,
+.svc-about-card:hover,
+.svc-benefit-card:hover,
+.job-card:hover,
+.careers-hr-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--pui-border);
+  box-shadow:
+    var(--pui-shadow-ambient),
+    0 14px 32px var(--pui-glow-soft),
+    0 0 0 1px var(--pui-border) inset;
+}
+
+/* Cards that use a scale-based hover in the base stylesheets — cancel the
+   scale so every card shares the same 4px lift, keep everything else. */
+.service-card:hover,
+.service-card:focus-within,
+.svc-why-card:hover,
+.svc-faq-item:hover,
+.svc-related-card:hover,
+.svc-about-card:hover,
+.svc-benefit-card:hover{transform:translateY(-4px);}
+
+/* --------------------------------------------------------------------------
+   3 — CARD ICON MICRO-ANIMATION (brighten + scale 1.05, no rotation/bounce)
+   -------------------------------------------------------------------------- */
+.service-card:hover .service-icon,
+.why-choose-card:hover .why-choose-icon,
+.svc-why-card:hover .svc-why-icon,
+.svc-timeline-card:hover .svc-timeline-icon,
+.job-card:hover .job-icon,
+.careers-hr-card:hover .hr-icon,
+.svc-testimonial-card:hover .svc-testi-quote-icon,
+.svc-related-card:hover .svc-related-icon,
+.svc-about-card:hover .svc-about-icon,
+.svc-benefit-card:hover .svc-benefit-icon,
+.about-feature:hover .feature-icon{
+  transform:scale(1.05) !important;
+  filter:brightness(1.12);
+  transition:transform .3s ease-in-out, filter .3s ease-in-out, background .3s ease-in-out, color .3s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   4 — CARD HEADING COLOR TRANSITION ON HOVER (paragraphs unchanged)
+   -------------------------------------------------------------------------- */
+.service-card:hover h3,
+.why-choose-card:hover h3,
+.svc-why-card:hover h3,
+.svc-timeline-card:hover h3,
+.svc-testimonial-card:hover .svc-testi-person strong,
+.svc-related-card:hover .rel-name,
+.job-card:hover h3,
+.careers-hr-card:hover h3,
+.svc-about-card:hover h3,
+.svc-benefit-card:hover h3,
+.about-feature:hover h3{
+  color:var(--pui-hover);
+  transition:color .3s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   5 — NAVBAR DROPDOWN (mega-panel) HOVER POLISH
+   -------------------------------------------------------------------------- */
+.mega-panel a{
+  position:relative;
+  transition:background .3s ease-in-out,color .3s ease-in-out,padding-left .3s ease-in-out,opacity .25s ease,transform .25s ease;
+}
+.mega-panel a::before{
+  content:'';position:absolute;left:0;top:50%;transform:translateY(-50%) scaleY(0);
+  width:3px;height:60%;border-radius:3px;background:var(--pui-primary);
+  transition:transform .3s ease-in-out;transform-origin:center;
+}
+.mega-panel a:hover{
+  background:var(--pui-bg-light);
+  color:var(--pui-hover);
+  padding-left:18px;
+  box-shadow:0 6px 18px var(--pui-glow-soft);
+}
+.mega-panel a:hover::before{transform:translateY(-50%) scaleY(1);}
+
+/* --------------------------------------------------------------------------
+   7 — BORDER RADIUS CONSISTENCY
+   -------------------------------------------------------------------------- */
+.about-card,
+.service-card,
+.why-choose-card,
+.stat-card,
+.testimonial-card,
+.svc-timeline-card,
+.svc-testimonial-card,
+.svc-leadgen-card,
+.careers-hr-card{border-radius:20px;}
+
+.svc-why-card,
+.svc-faq-item,
+.svc-related-card,
+.svc-about-card,
+.svc-benefit-card,
+.job-card{border-radius:20px;}
+
+.mega-panel{border-radius:18px;}
+.chatbot-panel{border-radius:18px;}
+.chatbot-bubble{border-radius:18px;}
+
+.contact-form .form-field input,
+.contact-form .form-field textarea,
+.contact-form .form-field-select select{border-radius:16px;}
+
+/* --------------------------------------------------------------------------
+   9 — CHATBOT: softer shadow, spacing, no new hover/glow on messages
+   -------------------------------------------------------------------------- */
+.chatbot-panel{box-shadow:0 20px 48px rgba(17,17,17,0.10);}
+.chatbot-body{gap:16px;padding:16px;}
+.chatbot-bubble{padding:9px 14px;box-shadow:0 4px 12px rgba(17,17,17,0.05);}
+.chatbot-msg.user .chatbot-bubble{background:linear-gradient(135deg,var(--pui-primary),var(--pui-hover));}
+
+/* --------------------------------------------------------------------------
+   11 — Global elegant timing for anything still on a slower transition
+   -------------------------------------------------------------------------- */
+.svc-related-icon,.service-icon,.why-choose-icon,.svc-why-icon{transition-duration:.3s;}
+
+/* --------------------------------------------------------------------------
+   SCROLL-REVEAL — the site already implements this via .reveal-up/.in-view
+   (IntersectionObserver in script.js / service.js). We only tighten the
+   timing/travel distance to match the premium spec (400-500ms, 20-30px)
+   instead of the previous 800ms/28px, without touching the JS logic.
+   -------------------------------------------------------------------------- */
+.reveal-up{
+  transform:translateY(24px);
+  transition:opacity .45s var(--ease), transform .45s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .about-card,.service-card,.why-choose-card,.stat-card,.testimonial-card,
+  .svc-hero-price-card,.svc-leadgen-card,.svc-timeline-card,.svc-why-card,
+  .svc-faq-item,.svc-testimonial-card,.svc-related-card,.job-card,.careers-hr-card,
+  .reveal-up{transition:none !important;}
+}
+
+/* ==========================================================================
+   ROUND 2 — brighter orange, solid-white cards, larger text, orange questions
+   ========================================================================== */
+
+/* Bump the accent to a punchier, more saturated orange (brighter, not darker)
+   so hover glows/borders read clearly instead of blending into the base theme. */
+:root{
+  --pui-primary:#FF7A1A;
+  --pui-hover:#FF6600;
+  --pui-glow:rgba(255,122,26,0.38);
+  --pui-glow-soft:rgba(255,122,26,0.22);
+  --pui-border:#FFB066;
+}
+
+/* All info cards → solid white instead of the translucent glass tint, so they
+   read as clean white cards rather than blending into the cream page background. */
+.about-card,
+.service-card,
+.why-choose-card,
+.stat-card,
+.testimonial-card,
+.svc-hero-price-card,
+.svc-leadgen-card,
+.svc-timeline-card,
+.svc-why-card,
+.svc-faq-item,
+.svc-testimonial-card,
+.svc-related-card,
+.svc-about-card,
+.svc-benefit-card,
+.job-card,
+.careers-hr-card{
+  background:#FFFFFF !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+
+/* ---------- Get Free Consultation block (enquiry card) ---------- */
+.svc-leadgen-card .leadgen-benefits li,
+.leadgen-benefits li{
+  background:#FFFFFF;
+  border-color:rgba(255,122,26,0.35);
+  font-size:15px;
+  padding:14px 16px;
+}
+.svc-leadgen-card .leadgen-benefits li:hover,
+.leadgen-benefits li:hover{
+  border-color:var(--pui-primary);
+  background:var(--pui-bg-light);
+}
+.leadgen-check{
+  background:rgba(255,122,26,0.12);
+  color:var(--pui-primary);
+}
+.svc-leadgen-card .leadgen-copy .eyebrow{color:var(--pui-primary);}
+.svc-leadgen-card .leadgen-copy .lede{font-size:15.5px !important;}
+
+/* Bigger, easier-to-read text inside every service enquiry form */
+.contact-form .form-field > label,
+.contact-form .form-field-select > label{font-size:14px;}
+.contact-form .form-field input,
+.contact-form .form-field textarea,
+.contact-form .form-field-select select{font-size:15.5px;}
+.contact-form .form-field-phone-inline .phone-prefix-static,
+.contact-form .form-field-phone-inline input{font-size:15.5px;}
+.contact-form .btn-submit{font-size:15px;}
+
+/* ---------- About the Service — question headings → orange ---------- */
+.svc-about-card h3{color:var(--pui-primary);}
+.svc-about-icon{
+  background:rgba(255,122,26,0.12);
+  color:var(--pui-primary);
+}
+
+/* ---------- Benefits grid — same soft, lighter icon treatment ---------- */
+.svc-benefit-icon{
+  background:rgba(255,122,26,0.12);
+  color:var(--pui-primary);
+}
+
+/* ---------- Why-choose / timeline / job / hr icons — soft tint, not solid ---------- */
+.why-choose-icon,
+.svc-why-icon,
+.svc-timeline-icon,
+.job-icon,
+.hr-icon,
+.svc-testi-quote-icon,
+.svc-related-icon{
+  background:rgba(255,122,26,0.12);
+  color:var(--pui-primary);
+}
+
+/* ==========================================================================
+   ROUND 4 — navbar: compact, balanced spacing (fixes Round 3's full-width
+   stretch, which spread nav items too far apart on wide screens)
+   ========================================================================== */
+
+/* The logo previously sat inside a fixed 170px column, which reserved more
+   room than the logo actually needs. Let it size to content and nudge right,
+   with a tighter reserved gap before the nav links start. */
+.brand{
+  flex:0 0 auto;
+  margin-left:6px;
+  margin-right:clamp(10px,1.4vw,20px);
+}
+
+/* Keep the nav-link cluster compact and centered instead of stretching it
+   across the full available width — that full-width stretch was what made
+   the gap between individual nav items too large on bigger screens. */
+.main-nav{justify-content:center;}
+.nav-list{
+  width:auto;
+  justify-content:center;
+  gap:14px;
+}
+
+@media (max-width:1400px){
+  .nav-list{gap:8px;}
+  .nav-link{padding:8px 5px;}
+}
+
+/* ==========================================================================
+   CHATBOT WELCOME POPUP
+   Auto-appearing welcome bubble above the AI chatbot icon (home page only).
+   Shows once per browser session, closes on its own after 30s or on click.
+   ========================================================================== */
+.chatbot-welcome{
+  position:fixed;
+  right:24px;
+  bottom:96px;
+  width:300px;
+  max-width:calc(100vw - 32px);
+  z-index:890; /* just below the chatbot (900) so the icon stays on top */
+  background:var(--white);
+  border-radius:16px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.14);
+  border:1px solid var(--card-border);
+  border-top:3px solid var(--primary);
+  padding:16px 16px 14px;
+  font-family:var(--font-body);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateY(18px) scale(0.96);
+  transition:opacity .45s var(--ease),transform .45s var(--ease),visibility .45s;
+}
+.chatbot-welcome.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateY(0) scale(1);
+}
+.chatbot-welcome-close{
+  position:absolute;
+  top:8px;
+  right:10px;
+  background:none;
+  border:none;
+  font-size:19px;
+  line-height:1;
+  color:var(--text-light);
+  cursor:pointer;
+  padding:4px;
+  opacity:.6;
+  transition:opacity .2s ease,color .2s ease;
+}
+.chatbot-welcome-close:hover{opacity:1;color:var(--primary);}
+.chatbot-welcome-head{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+  padding-right:20px;
+}
+.chatbot-welcome-avatar{
+  width:22px;height:22px;object-fit:contain;
+  background:var(--peach);border-radius:6px;padding:3px;flex-shrink:0;
+}
+.chatbot-welcome-head strong{font-size:13.5px;color:var(--secondary);}
+.chatbot-welcome-greet{font-size:13.5px;font-weight:600;color:var(--text);margin:0 0 4px;line-height:1.5;}
+.chatbot-welcome-sub{font-size:12.5px;color:var(--text-light);margin:0 0 6px;}
+.chatbot-welcome-list{
+  list-style:none;margin:0 0 10px;padding:0;
+  display:grid;grid-template-columns:1fr 1fr;gap:4px 8px;
+}
+.chatbot-welcome-list li{
+  font-size:11.5px;color:var(--text);line-height:1.4;padding-left:12px;position:relative;
+}
+.chatbot-welcome-list li::before{
+  content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;
+  background:var(--primary);
+}
+.chatbot-welcome-cta{font-size:12.5px;color:var(--text-light);margin:0 0 12px;font-style:italic;}
+.chatbot-welcome-start{
+  width:100%;border:none;border-radius:100px;padding:9px 14px;cursor:pointer;
+  background:linear-gradient(135deg,var(--primary),var(--accent));color:var(--white);
+  font-size:13px;font-weight:600;font-family:var(--font-body);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+  box-shadow:0 8px 18px rgba(255,154,61,0.28);
+}
+.chatbot-welcome-start:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,154,61,0.34);}
+
+@media (max-width:680px){
+  .chatbot-welcome{
+    right:15px;
+    bottom:82px;
+    width:min(300px,calc(100vw - 24px));
+    padding:14px 14px 12px;
+  }
+  .chatbot-welcome-list{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:380px){
+  .chatbot-welcome-list{grid-template-columns:1fr;}
+}

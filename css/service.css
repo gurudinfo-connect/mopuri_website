@@ -1,0 +1,320 @@
+/* ============ SERVICE DETAIL PAGE ============ */
+
+/* ---------- HERO (title only — no image, no breadcrumb) ---------- */
+.svc-hero-noimg{
+  position:relative;padding:118px 0 28px;text-align:center;
+  background:var(--bg);
+}
+.svc-hero-content{position:relative;z-index:1;max-width:900px;margin:0 auto;}
+.svc-hero-title{
+  font-family:var(--font-display);font-weight:600;
+  font-size:clamp(24px,4vw,46px);line-height:1.1;margin:0;color:var(--primary);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  max-width:100%;
+}
+@media (max-width:768px){
+  .svc-hero-title{font-size:clamp(20px,5.2vw,30px);}
+}
+@media (max-width:480px){
+  .svc-hero-title{font-size:clamp(17px,5.8vw,24px);}
+}
+
+/* ---------- SHARED SECTION HELPERS ---------- */
+.svc-section{padding:88px 0;}
+.svc-section-alt{background:var(--bg-light);}
+
+/* ---------- LEAD GENERATION (below hero) ---------- */
+/* Single premium white card housing both the left copy/benefits column and
+   the right enquiry form — instead of two separate floating containers.
+   Height is fully content-driven (no fixed heights anywhere below), and
+   spacing is kept tight so the card sits close beneath the hero pricing card. */
+.svc-leadgen.leadgen.section{padding:20px 0 56px;}
+
+.svc-leadgen-card{
+  background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:32px;box-shadow:var(--shadow-strong);
+  max-width:1300px;margin:0 auto;padding:40px 56px;
+}
+.svc-leadgen .leadgen-grid{align-items:start;gap:56px;}
+.svc-leadgen .leadgen-copy{padding-top:2px;}
+
+/* flip the copy column from the site's dark-theme defaults to the
+   white-card palette, since it now lives inside the white card too */
+.svc-leadgen-card .leadgen-copy .eyebrow{
+    color: var(--primary);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+.svc-leadgen-card .leadgen-copy .section-title{color:var(--card-text);
+    font-weight: 600;}
+.svc-leadgen-card .leadgen-copy .lede{
+    color: var(--card-text-light);
+}
+
+.svc-leadgen-card .leadgen-benefits{grid-template-columns:1fr;gap:8px;margin:14px 0 0;}
+.svc-leadgen-card .leadgen-benefits li{
+    background:#F8F8FA;
+    border-color:var(--card-border);
+    color:var(--card-text);
+    font-size:13.5px;
+    padding:13px 16px;
+}
+.svc-leadgen-card .leadgen-benefits li:hover{
+  background:var(--accent-soft);border-color:rgba(234, 185, 139, 0.4);
+  box-shadow:0 14px 30px rgba(255,154,61,0.12);
+}
+
+/* flatten the form so it reads as part of the same card, not a nested one */
+.svc-leadgen-card .leadgen-form-wrap{max-width:none;}
+.svc-leadgen-card .contact-form{
+  background:none;border:none;box-shadow:none;padding:0;border-radius:0;
+}
+.svc-leadgen-card .contact-form::before{display:none;}
+.svc-hero-title{
+    font-size: clamp(22px,2.6vw,32px) !important;
+}
+
+.svc-leadgen-card .leadgen-copy .section-title{
+    font-size: clamp(22px,2.1vw,28px) !important;
+    line-height:1.2;
+    margin-bottom:10px;
+}
+
+.svc-leadgen-card .leadgen-copy .lede{
+    font-size:13.5px !important;
+    line-height:1.65;
+    margin-bottom:16px;
+}
+
+.svc-leadgen .leadgen-grid{
+    align-items:start !important;
+    gap:40px;
+}
+
+.svc-leadgen-card .leadgen-form-wrap{
+    align-self:start;
+    margin-top:0 !important;
+}
+
+@media (max-width:1080px){
+  .svc-leadgen-card{padding:40px 32px;}
+  .svc-leadgen .leadgen-grid{grid-template-columns:1fr;gap:36px;}
+}
+@media (max-width:600px){
+  .svc-leadgen-card{padding:30px 20px;border-radius:24px;}
+}
+
+/* ---------- HERO PRICING CARD (inside hero, below the service title) ---------- */
+.svc-hero-price-card{
+  display:inline-flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;
+  margin:32px auto 0;max-width:100%;
+  background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));color:var(--card-text);
+  border:1.5px solid rgba(255,154,61,0.22);border-radius:100px;
+  padding:14px 16px 14px 22px;box-shadow:var(--shadow-med);
+}
+.svc-hero-price-icon{
+  flex:none;width:38px;height:38px;border-radius:50%;
+  background:var(--accent-soft);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;
+}
+.svc-hero-price-info{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;}
+.svc-hero-price-label{font-size:13px;color:var(--card-text-light);}
+.svc-hero-price-label strong{color:var(--card-text);font-weight:700;}
+.svc-hero-price-value{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--primary);line-height:1.1;}
+.svc-hero-price-btn{padding:12px 24px;font-size:14px;}
+@media (max-width:520px){
+  .svc-hero-price-card{
+    flex-direction:column;align-items:center;text-align:center;border-radius:24px;
+    padding:24px 22px;gap:12px;
+  }
+  .svc-hero-price-info{align-items:center;text-align:center;}
+  .svc-hero-price-btn{width:100%;}
+}
+
+/* ---------- ABOUT ---------- */
+.svc-about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.svc-about-card{background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:32px;box-shadow:var(--shadow-soft);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.svc-about-card:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 24px 50px rgba(255,154,61,0.16),var(--shadow-med);border-color:rgba(255,154,61,0.4);}
+.svc-about-icon{display:inline-flex;width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--primary);align-items:center;justify-content:center;margin-bottom:14px;}
+.svc-about-card h3{font-family:var(--font-display);font-size:20px;font-weight:600;margin:0 0 12px;color:var(--card-text);}
+.svc-about-card p{color:var(--card-text-light);line-height:1.75;margin:0;font-size:15.5px;}
+
+/* ---------- BENEFITS ---------- */
+.svc-benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.svc-benefit-card{background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));color:var(--card-text);border:1.5px solid var(--glass-border);border-radius:var(--radius-md);padding:28px 22px;box-shadow:var(--shadow-soft);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.svc-benefit-card:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 24px 50px rgba(255,154,61,0.18),var(--shadow-med);border-color:rgba(255,154,61,0.35);}
+.svc-benefit-icon{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.svc-benefit-card h3{font-size:16px;font-weight:700;margin:0 0 8px;color:var(--card-text);}
+.svc-benefit-card p{font-size:14px;line-height:1.6;color:var(--card-text-light);margin:0;}
+
+/* ---------- DOCUMENTS ---------- */
+.svc-docs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.svc-doc-card{display:flex;gap:14px;align-items:flex-start;background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:20px;box-shadow:var(--shadow-soft);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.svc-doc-card:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 18px 36px rgba(255,154,61,0.14);border-color:rgba(255,154,61,0.4);}
+.svc-doc-icon{flex:none;width:38px;height:38px;border-radius:10px;background:rgba(255,154,61,0.12);color:var(--primary);display:flex;align-items:center;justify-content:center;}
+.svc-doc-card h4{font-size:14.5px;font-weight:700;margin:0 0 4px;color:var(--card-text);}
+.svc-doc-card p{font-size:13px;line-height:1.55;color:var(--card-text-light);margin:0;}
+
+/* ---------- PROCESS ---------- */
+.svc-process-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.svc-process-step{position:relative;background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:28px 22px;box-shadow:var(--shadow-soft);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.svc-process-step:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 24px 50px rgba(255,154,61,0.16);border-color:rgba(255,154,61,0.4);}
+.svc-process-step .process-num{font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--primary);opacity:.85;display:block;margin-bottom:10px;border:none;background:none;width:auto;height:auto;border-radius:0;box-shadow:none;}
+.svc-process-step h3{font-size:16px;font-weight:700;margin:0 0 8px;color:var(--card-text);}
+.svc-process-step p{font-size:13.5px;color:var(--card-text-light);line-height:1.6;margin:0;}
+
+/* ---------- TIMELINE ---------- */
+.svc-timeline-wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;}
+.svc-timeline-factors{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;}
+.svc-timeline-factors li{position:relative;padding-left:26px;color:var(--text-light);font-size:14.5px;line-height:1.6;}
+.svc-timeline-factors li::before{content:'';position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:50%;background:var(--primary);}
+.svc-timeline-card{background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);color:var(--card-text);border-radius:var(--radius-lg);padding:40px 32px;text-align:center;box-shadow:var(--shadow-med);}
+.svc-timeline-icon{display:inline-flex;width:56px;height:56px;border-radius:50%;background:var(--accent-soft);color:var(--primary);align-items:center;justify-content:center;margin-bottom:16px;}
+.svc-timeline-card h3{font-size:17px;font-weight:700;margin:0 0 10px;}
+.svc-timeline-card p{font-size:15px;color:var(--card-text);margin:0 0 14px;font-weight:600;line-height:1.5;}
+.svc-timeline-note{font-size:12.5px;color:var(--card-text-light);}
+
+/* ---------- PRICING ---------- */
+.svc-pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+/* Services with fewer than 3 tiers (e.g. a single "starting from" price)
+   get their card(s) centered instead of stretched across 3 empty grid
+   columns. The default 3-column layout above is untouched. */
+.svc-pricing-grid.count-1{grid-template-columns:minmax(0,420px);justify-content:center;}
+.svc-pricing-grid.count-2{grid-template-columns:repeat(2,minmax(0,380px));justify-content:center;}
+/* "Starting from" label shown above the price on single-tier / from-price cards */
+.svc-price-from-label{display:block;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--text-light);margin-bottom:2px;}
+/* Brief highlight on the enquiry form when a pricing card's plan is chosen */
+.leadgen-form-wrap{transition:box-shadow .4s ease;border-radius:var(--radius-lg);}
+
+.svc-price-card{background:var(--bg-light);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 28px;position:relative;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);cursor:pointer;}
+.svc-price-card:hover,.svc-price-card.is-tapped{transform:translateY(-6px);box-shadow:var(--shadow-med);border-color:rgba(255,154,61,0.4);}
+.svc-price-card.recommended{background:linear-gradient(160deg, rgba(255,154,61,0.14), rgba(255,154,61,0.03));border-color:rgba(255,154,61,0.45);transform:scale(1.03);box-shadow:var(--shadow-med);}
+.svc-price-card.recommended:hover,.svc-price-card.recommended.is-tapped{transform:scale(1.03) translateY(-6px);}
+.svc-price-icon{display:inline-flex;width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--primary);align-items:center;justify-content:center;margin-bottom:16px;}
+.svc-price-badge{position:absolute;top:-13px;right:28px;background:linear-gradient(135deg,var(--primary),var(--accent));color:var(--white);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:100px;}
+.svc-price-card h3{font-family:var(--font-display);font-size:22px;font-weight:600;margin:0 0 6px;}
+.svc-price-card .svc-price-desc{font-size:13.5px;color:var(--text-light);margin:0 0 20px;}
+.svc-price-amount{font-family:var(--font-display);font-size:38px;font-weight:600;color:var(--primary);margin-bottom:4px;}
+.svc-price-amount small{font-size:14px;color:var(--text-light);font-weight:500;font-family:var(--font-body);}
+/* Original price (data-driven, optional) — shown struck through beside the amount */
+.svc-price-amount small.svc-price-original{margin-left:8px;text-decoration:line-through;opacity:.75;}
+.svc-price-fee-note{display:block;font-size:12px;color:var(--text-light);opacity:.8;margin:0 0 18px;}
+
+/* Discount % / savings row (data-driven, optional) */
+.svc-price-discount-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 10px;}
+.svc-price-discount-badge{font-size:11.5px;font-weight:700;letter-spacing:.02em;color:var(--primary);background:var(--accent-soft);padding:3px 9px;border-radius:100px;}
+.svc-price-savings{font-size:12.5px;color:var(--text-light);}
+
+/* Small offer/promo tag above the amount (data-driven, optional) */
+.svc-price-offer-tag{display:inline-block;font-size:11.5px;font-weight:600;color:var(--accent);margin:0 0 10px;}
+
+/* EMI note and payment options (data-driven; edit in services-data.js) */
+.svc-price-emi{font-size:12.5px;color:var(--text-light);margin:0 0 10px;}
+.svc-price-payment{font-size:12px;color:var(--text-light);opacity:.85;line-height:1.5;margin:0 0 20px;}
+.svc-price-payment strong{color:var(--text);font-weight:600;}
+
+.svc-price-includes{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:11px;flex:1;}
+.svc-price-includes li{position:relative;padding-left:24px;font-size:14px;color:var(--text-light);line-height:1.5;}
+.svc-price-includes li::before{content:'✓';position:absolute;left:0;color:var(--primary);font-weight:700;}
+.svc-price-card .btn{width:100%;justify-content:center;}
+
+/* ---------- WHY CHOOSE US ---------- */
+.svc-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.svc-why-card{background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:24px 20px;box-shadow:var(--shadow-soft);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.svc-why-card:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 18px 36px rgba(255,154,61,0.14);border-color:rgba(255,154,61,0.4);}
+.svc-why-icon{display:inline-flex;width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--primary);align-items:center;justify-content:center;margin-bottom:14px;}
+.svc-why-card h3{font-size:15px;font-weight:700;margin:0 0 6px;color:var(--card-text);}
+.svc-why-card p{font-size:13px;color:var(--card-text-light);line-height:1.55;margin:0;}
+
+/* ---------- FAQ ---------- */
+.svc-faq-list{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.svc-faq-item{background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-soft);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.svc-faq-item:hover{transform:translateY(-10px) scale(1.015);box-shadow:0 18px 36px rgba(255,154,61,0.14);border-color:rgba(255,154,61,0.4);}
+.svc-faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-weight:600;font-size:15px;color:var(--card-text);}
+.svc-faq-q .svc-faq-plus{flex:none;width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--primary);transition:transform .3s var(--ease);}
+.svc-faq-item.open .svc-faq-plus{transform:rotate(45deg);}
+.svc-faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease);}
+.svc-faq-a p{margin:0;padding:0 24px 20px;color:var(--card-text-light);font-size:14.5px;line-height:1.7;}
+
+/* ---------- TESTIMONIALS ---------- */
+.svc-testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.svc-testimonial-card{background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);color:var(--card-text);border-radius:var(--radius-md);padding:30px 26px;box-shadow:var(--shadow-soft);}
+.svc-testi-quote-icon{display:inline-flex;width:38px;height:38px;border-radius:10px;background:var(--accent-soft);color:var(--primary);align-items:center;justify-content:center;margin-bottom:14px;}
+.svc-testimonial-card .stars{color:var(--primary);letter-spacing:2px;margin-bottom:14px;font-size:15px;}
+.svc-testimonial-card p{font-size:14.5px;line-height:1.7;color:var(--card-text);margin:0 0 20px;}
+.svc-testi-person{display:flex;align-items:center;gap:12px;}
+.svc-testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:none;}
+.svc-testi-person strong{display:block;font-size:14px;color:var(--card-text);}
+.svc-testi-person span{font-size:12.5px;color:var(--card-text-light);}
+
+/* ---------- RELATED ---------- */
+.svc-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.svc-related-card{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--glass-bg);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:20px 22px;text-decoration:none;box-shadow:var(--shadow-soft);transition:all .3s var(--ease);}
+.svc-related-card:hover{border-color:var(--primary);transform:translateY(-6px) scale(1.015);box-shadow:0 18px 36px rgba(255,154,61,0.14);}
+.svc-related-card-left{display:flex;align-items:center;gap:12px;min-width:0;}
+.svc-related-icon{flex:none;width:36px;height:36px;border-radius:10px;background:var(--accent-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;transition:background .3s ease,color .3s ease,transform .3s ease;}
+.svc-related-card:hover .svc-related-icon{background:linear-gradient(135deg,var(--primary),var(--accent));color:var(--white);transform:scale(1.06);}
+.svc-related-card span.rel-name{font-size:14.5px;font-weight:600;color:var(--card-text);}
+.svc-related-card svg.rel-arrow{flex:none;color:var(--primary);transition:transform .3s var(--ease);}
+.svc-related-card:hover svg.rel-arrow{transform:translateX(4px);}
+
+/* ---------- GRID LAYOUT (centered rows, no stretched last row) ---------- */
+@media (min-width:1081px){
+  .svc-benefits-grid,.svc-docs-grid,.svc-process-timeline,.svc-why-grid{
+    display:flex;flex-wrap:wrap;justify-content:center;
+  }
+  .svc-benefits-grid > *,.svc-docs-grid > *,.svc-process-timeline > *,.svc-why-grid > *{
+    flex:0 0 auto;
+  }
+
+  /* default / 4 cards: 4 per row */
+  .svc-benefits-grid > *{flex-basis:calc((100% - 60px) / 4);}
+  .svc-docs-grid > *{flex-basis:calc((100% - 54px) / 4);}
+  .svc-process-timeline > *{flex-basis:calc((100% - 66px) / 4);}
+  .svc-why-grid > *{flex-basis:calc((100% - 60px) / 4);}
+
+  /* 3 cards -> row of 3 */
+  .svc-benefits-grid:has(> :nth-child(3):last-child) > *{flex-basis:calc((100% - 40px) / 3);}
+  .svc-docs-grid:has(> :nth-child(3):last-child) > *{flex-basis:calc((100% - 36px) / 3);}
+  .svc-process-timeline:has(> :nth-child(3):last-child) > *{flex-basis:calc((100% - 44px) / 3);}
+  .svc-why-grid:has(> :nth-child(3):last-child) > *{flex-basis:calc((100% - 40px) / 3);}
+
+  /* 5 cards -> 3 then 2 */
+  .svc-benefits-grid:has(> :nth-child(5):last-child) > *{flex-basis:calc((100% - 40px) / 3);}
+  .svc-docs-grid:has(> :nth-child(5):last-child) > *{flex-basis:calc((100% - 36px) / 3);}
+  .svc-process-timeline:has(> :nth-child(5):last-child) > *{flex-basis:calc((100% - 44px) / 3);}
+  .svc-why-grid:has(> :nth-child(5):last-child) > *{flex-basis:calc((100% - 40px) / 3);}
+
+  /* 6 cards -> 3 then 3 */
+  .svc-benefits-grid:has(> :nth-child(6):last-child) > *{flex-basis:calc((100% - 40px) / 3);}
+  .svc-docs-grid:has(> :nth-child(6):last-child) > *{flex-basis:calc((100% - 36px) / 3);}
+  .svc-process-timeline:has(> :nth-child(6):last-child) > *{flex-basis:calc((100% - 44px) / 3);}
+  .svc-why-grid:has(> :nth-child(6):last-child) > *{flex-basis:calc((100% - 40px) / 3);}
+
+  /* 7 cards -> 4 then 3 */
+  .svc-benefits-grid:has(> :nth-child(7):last-child) > *{flex-basis:calc((100% - 60px) / 4);}
+  .svc-docs-grid:has(> :nth-child(7):last-child) > *{flex-basis:calc((100% - 54px) / 4);}
+  .svc-process-timeline:has(> :nth-child(7):last-child) > *{flex-basis:calc((100% - 66px) / 4);}
+  .svc-why-grid:has(> :nth-child(7):last-child) > *{flex-basis:calc((100% - 60px) / 4);}
+
+  /* 8 cards -> 4 then 4 */
+  .svc-benefits-grid:has(> :nth-child(8):last-child) > *{flex-basis:calc((100% - 60px) / 4);}
+  .svc-docs-grid:has(> :nth-child(8):last-child) > *{flex-basis:calc((100% - 54px) / 4);}
+  .svc-process-timeline:has(> :nth-child(8):last-child) > *{flex-basis:calc((100% - 66px) / 4);}
+  .svc-why-grid:has(> :nth-child(8):last-child) > *{flex-basis:calc((100% - 60px) / 4);}
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1080px){
+  .svc-benefits-grid,.svc-docs-grid,.svc-process-timeline{grid-template-columns:repeat(2,1fr);}
+  .svc-pricing-grid,.svc-testimonial-grid,.svc-related-grid,.svc-why-grid{grid-template-columns:repeat(2,1fr);}
+  .svc-about-grid{grid-template-columns:1fr;}
+  .svc-timeline-wrap{grid-template-columns:1fr;}
+  .svc-price-card.recommended{transform:none;}
+}
+@media (max-width:680px){
+  .svc-benefits-grid,.svc-docs-grid,.svc-process-timeline,.svc-pricing-grid,.svc-testimonial-grid,.svc-related-grid,.svc-why-grid{grid-template-columns:1fr;}
+  .svc-hero-noimg{padding:130px 0 40px;}
+  .svc-leadgen.leadgen.section{padding:40px 0 60px;}
+  .svc-section{padding:60px 0;}
+}

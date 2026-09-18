@@ -1,0 +1,75 @@
+/* ==========================================================================
+   GET STARTED PAGE
+   Dedicated enquiry page opened from the Home page "Get Started" button.
+   Reuses the site's existing .svc-leadgen-card / .contact-form design
+   system (from service.css / style.css) for identical professional
+   styling — this file only adds the page hero and the searchable
+   "Service Required" suggestions dropdown.
+   ========================================================================== */
+
+/* ---------- HERO ----------
+   padding-top clears the fixed navbar (navbar height ~90px) with
+   generous breathing room, same pattern used on service.html / careers.html,
+   so the page content never starts underneath or overlaps the navbar. */
+.gs-hero{
+  position:relative;
+  padding:150px 0 20px;
+  text-align:center;
+  background:var(--bg);
+}
+.gs-hero-content{max-width:720px;margin:0 auto;}
+.gs-hero-title{
+  font-family:var(--font-display);font-weight:600;
+  font-size:clamp(28px,4.4vw,48px);line-height:1.15;margin:10px 0 14px;color:var(--primary);
+}
+.gs-hero-sub{
+  font-size:15.5px;line-height:1.7;color:var(--text-light);margin:0 auto;max-width:600px;
+}
+
+@media (max-width:768px){
+  .gs-hero{padding:130px 0 16px;}
+}
+@media (max-width:480px){
+  .gs-hero{padding:120px 0 14px;}
+}
+
+.gs-form-section{padding-top:36px;}
+
+/* ---------- SERVICE REQUIRED — searchable input + suggestions ---------- */
+.gs-service-field{position:relative;}
+
+.gs-suggestions{
+  position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:80;
+  background:var(--white);border:1.5px solid rgba(17,17,17,0.1);border-radius:16px;
+  box-shadow:0 16px 36px rgba(0,0,0,0.14);
+  max-height:230px;overflow-y:auto;padding:6px;
+}
+.gs-suggestions[hidden]{display:none;}
+
+.gs-suggestion{
+  display:block;text-align:left;
+  padding:9px 12px;border-radius:10px;font-size:13.5px;font-weight:400;color:#111;
+  background:var(--white);
+  cursor:pointer;
+}
+
+.gs-no-suggestions{
+  padding:9px 12px;font-size:12.5px;color:var(--card-text-light);
+}
+
+/* ---------- SELECTED PLAN CHIP ----------
+   Shown when the enquiry form was opened via a "Choose Plan" / "Get
+   Started" button that already carries a service + plan in the URL. */
+.gs-plan-chip{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  margin:-8px 0 18px;padding:10px 14px;
+  background:var(--accent-soft);border:1px solid rgba(255,154,61,0.35);
+  border-radius:12px;font-size:13px;
+}
+.gs-plan-chip-label{color:var(--text-light);font-weight:500;}
+.gs-plan-chip-value{color:var(--primary);font-weight:700;}
+.gs-plan-chip-clear{
+  margin-left:auto;background:none;border:none;cursor:pointer;
+  font-size:18px;line-height:1;color:var(--text-light);padding:0 2px;
+}
+.gs-plan-chip-clear:hover{color:var(--primary);}
