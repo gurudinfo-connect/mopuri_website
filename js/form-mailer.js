@@ -28,7 +28,7 @@
    to switch back to it once the site is actually deployed there.
    ========================================================================== */
 
-window.MBS_FORM_TO_EMAIL = 'guruachari809@gmail.com';
+window.MBS_FORM_TO_EMAIL = 'mopurisolutions@gmail.com';
 
 window.MBS_FORM_ENDPOINT = 'https://formsubmit.co/ajax/' + window.MBS_FORM_TO_EMAIL;
 

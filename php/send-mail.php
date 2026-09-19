@@ -6,7 +6,7 @@
  * Runs on Hostinger's own PHP + mail server. No third-party service, no
  * API key. Every form on the site POSTs its FormData here (see
  * js/form-mailer.js) and this script emails it straight to
- * guruachari809@gmail.com.
+ * mopurisolutions@gmail.com.
  *
  * SETUP (Hostinger hPanel):
  *   1. Upload this whole "php" folder to your site's root on Hostinger,
@@ -21,7 +21,7 @@
  *      sends the mail directly using PHP's built-in mail() function.
  *
  * TEST: open your site, submit any form, and check the
- * guruachari809@gmail.com inbox (and its Spam folder, the first few
+ * mopurisolutions@gmail.com inbox (and its Spam folder, the first few
  * times — see the deliverability note below, this matters more for a
  * Gmail destination than it would for a mopuri.in one).
  * ==========================================================================
@@ -30,13 +30,13 @@
 // ---------------------------------------------------------------------
 // Configuration
 // ---------------------------------------------------------------------
-$TO_EMAIL   = 'guruachari809@gmail.com';   // every submission is delivered here
+$TO_EMAIL   = 'mopurisolutions@gmail.com';   // every submission is delivered here
 $SITE_NAME  = 'Mopuri Business Solutions Website';
 
 // $FROM_EMAIL is the sender identity in the email header — it must stay
 // an address on YOUR OWN domain (mopuri.in), not the Gmail address above.
 // Gmail enforces strict anti-spoofing rules (DMARC) on its own domain, so
-// a "From: guruachari809@gmail.com" header sent from a non-Google
+// a "From: mopurisolutions@gmail.com" header sent from a non-Google
 // server (like this Hostinger box) would very likely be rejected or
 // dumped straight in spam. Sending "From" your own domain "To" a Gmail
 // inbox works fine — it's the reverse that breaks.

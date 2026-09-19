@@ -1,7 +1,7 @@
 # Activating form-to-email delivery (FormSubmit)
 
 Every form on the site sends its submission straight to
-**guruachari809@gmail.com** using [FormSubmit](https://formsubmit.co), a
+**mopurisolutions@gmail.com** using [FormSubmit](https://formsubmit.co), a
 free form-to-email relay. There's no server, no backend, no API key —
 it works the same whether you're previewing the site locally (e.g. VS
 Code "Live Server" on `127.0.0.1`) or after it's deployed anywhere.
@@ -11,8 +11,8 @@ Code "Live Server" on `127.0.0.1`) or after it's deployed anywhere.
 1. Every form's Submit button runs `window.MBS_sendFormEmail(...)`,
    defined in **`js/form-mailer.js`**.
 2. That function POSTs the form's data directly to FormSubmit's API
-   (`https://formsubmit.co/ajax/guruachari809@gmail.com`).
-3. FormSubmit emails the submission to **guruachari809@gmail.com**.
+   (`https://formsubmit.co/ajax/mopurisolutions@gmail.com`).
+3. FormSubmit emails the submission to **mopurisolutions@gmail.com**.
 
 ## One-time setup — required, do this first
 
@@ -20,7 +20,7 @@ FormSubmit needs the destination inbox to confirm it owns that address
 before it will deliver anything:
 
 1. Open the site (locally is fine) and submit **any one form**.
-2. Check the **guruachari809@gmail.com** inbox (and Spam) for an email
+2. Check the **mopurisolutions@gmail.com** inbox (and Spam) for an email
    from FormSubmit titled something like *"Please Activate FormSubmit"*.
 3. Click **"Confirm my email"** in that message.
 
@@ -98,7 +98,7 @@ never on a local static preview like Live Server). To switch to it:
   `form-mailer.js` logs the error there.
 - Nothing arrives, ever? The most common cause is skipping the
   **one-time confirmation email** above — check
-  guruachari809@gmail.com's Spam folder for it if it's not in the
+  mopurisolutions@gmail.com's Spam folder for it if it's not in the
   inbox.
 - If you switch to the PHP method above and emails still don't land,
   PHP's `mail()` only reports that Hostinger's server *accepted* the
