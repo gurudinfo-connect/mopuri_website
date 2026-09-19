@@ -725,12 +725,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNavInner.appendChild(a);
   });
 
-  const signupLink = document.createElement('a');
-  signupLink.href = '#signup';
-  signupLink.className = 'btn btn-primary btn-lg mobile-nav-signup';
-  signupLink.textContent = 'Sign Up';
-  mobileNavInner.appendChild(signupLink);
-
   function openMobileNav(){
     mobileNav.classList.add('active');
     navScrim.classList.add('active');
